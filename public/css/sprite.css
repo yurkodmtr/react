@@ -1,0 +1,214 @@
+.spr-sprite, .header .languages:after, .header .languages:hover:after, .header .search form:before, .header .search form input[type="submit"], .content__search input[type="submit"], .content__search:before, .breadcrumbs .spacer, .pagenator .prev:before, .pagenator .next:before, .rating_pas i, .rating_pas i.act, .rating_act i, .rating_act i.act, .rating_act i.actt, .video__item a:after, .showmore:after, .gallery .jcarousel-control-prev, .gallery .jcarousel-control-next, .carousel_main .jcarousel-control-prev, .carousel_main .jcarousel-control-next, .btn__buy i:before, .variants__content:before, #slider, #slider span, .comments .like_btn, .comments .dislike_btn, .comments .like_btn.act, .comments .like_btn:hover, .comments .dislike_btn.act, .comments .dislike_btn:hover, .rating_icon .icon_1, .rating_icon .icon_1.act, .rating_icon .icon_2, .rating_icon .icon_2.act, .rating_icon .icon_3, .rating_icon .icon_3.act, .rating_icon .icon_4, .rating_icon .icon_4.act, .rating_icon .icon_5, .rating_icon .icon_5.act, .icon_news, .icon_info, .icon_screen, .icon_games, .icon_date, .footer__soc .icon_1, .footer__soc .icon_2, .footer__soc .icon_3, .footer__soc .icon_4, .footer__soc .icon_5, .footer__soc .icon_6, .footer__soc .icon_7 {
+  background: url('../images/spr-s4a48c8517e.png') no-repeat;
+}
+
+.header .languages:after {
+  background-position: 0 -1594px;
+}
+.header .languages:after:hover, .header .languages:after.languages_hover, .header .languages:after.languages-hover {
+  background-position: 0 -1547px;
+}
+
+.header .languages:hover:after {
+  background-position: 0 -1547px;
+}
+
+.header .search form:before {
+  background-position: 0 -1534px;
+}
+
+.header .search form input[type="submit"] {
+  background-position: 0 -1576px;
+}
+
+.content__search input[type="submit"] {
+  background-position: 0 -1576px;
+}
+
+.content__search:before {
+  background-position: 0 -1444px;
+}
+
+.breadcrumbs .spacer {
+  background-position: 0 -1566px;
+}
+
+.pagenator .prev:before {
+  background-position: 0 -1559px;
+}
+
+.pagenator .next:before {
+  background-position: 0 -1587px;
+}
+
+.rating_pas i {
+  background-position: 0 -1360px;
+}
+
+.rating_pas i.act {
+  background-position: 0 -1324px;
+}
+
+.rating_act i {
+  background-position: 0 -1044px;
+}
+
+.rating_act i.act, .rating_act i.actt {
+  background-position: 0 -1301px;
+}
+
+.video__item a:after {
+  background-position: 0 0;
+}
+
+.showmore:after {
+  background-position: 0 -1393px;
+}
+
+.gallery .jcarousel-control-prev {
+  background-position: 0 -376px;
+}
+.gallery .jcarousel-control-prev:hover, .gallery .jcarousel-control-prev.gallery_prev_hover, .gallery .jcarousel-control-prev.gallery_prev-hover {
+  background-position: 0 -108px;
+}
+
+.gallery .jcarousel-control-next {
+  background-position: 0 -510px;
+}
+.gallery .jcarousel-control-next:hover, .gallery .jcarousel-control-next.gallery_next_hover, .gallery .jcarousel-control-next.gallery_next-hover {
+  background-position: 0 -242px;
+}
+
+.carousel_main .jcarousel-control-prev {
+  background-position: 0 -925px;
+}
+.carousel_main .jcarousel-control-prev:hover, .carousel_main .jcarousel-control-prev.gal_prev_hover, .carousel_main .jcarousel-control-prev.gal_prev-hover {
+  background-position: 0 -1086px;
+}
+
+.carousel_main .jcarousel-control-next {
+  background-position: 0 -1136px;
+}
+.carousel_main .jcarousel-control-next:hover, .carousel_main .jcarousel-control-next.gal_next_hover, .carousel_main .jcarousel-control-next.gal_next-hover {
+  background-position: 0 -975px;
+}
+
+.btn__buy i:before {
+  background-position: 0 -81px;
+}
+
+.variants__content:before {
+  background-position: 0 -1417px;
+}
+
+#slider {
+  background-position: 0 -644px;
+}
+
+#slider span {
+  background-position: 0 -1377px;
+}
+
+.comments .like_btn {
+  background-position: 0 -1521px;
+}
+
+.comments .dislike_btn {
+  background-position: 0 -1508px;
+}
+
+.comments .like_btn.act, .comments .like_btn:hover {
+  background-position: 0 -1495px;
+}
+
+.comments .dislike_btn.act, .comments .dislike_btn:hover {
+  background-position: 0 -1463px;
+}
+
+.rating_icon .icon_1 {
+  background-position: 0 -881px;
+}
+
+.rating_icon .icon_1.act {
+  background-position: 0 -859px;
+}
+
+.rating_icon .icon_2 {
+  background-position: 0 -679px;
+}
+
+.rating_icon .icon_2.act {
+  background-position: 0 -815px;
+}
+
+.rating_icon .icon_3 {
+  background-position: 0 -723px;
+}
+
+.rating_icon .icon_3.act {
+  background-position: 0 -903px;
+}
+
+.rating_icon .icon_4 {
+  background-position: 0 -701px;
+}
+
+.rating_icon .icon_4.act {
+  background-position: 0 -837px;
+}
+
+.rating_icon .icon_5 {
+  background-position: 0 -793px;
+}
+
+.rating_icon .icon_5.act {
+  background-position: 0 -771px;
+}
+
+.icon_news {
+  background-position: 0 -654px;
+}
+
+.icon_info {
+  background-position: 0 -1276px;
+}
+
+.icon_screen {
+  background-position: 0 -1186px;
+}
+
+.icon_games {
+  background-position: 0 -745px;
+}
+
+.icon_date {
+  background-position: 0 -1211px;
+}
+
+.footer__soc .icon_1 {
+  background-position: 0 -1476px;
+}
+
+.footer__soc .icon_2 {
+  background-position: 0 -1425px;
+}
+
+.footer__soc .icon_3 {
+  background-position: 0 -1341px;
+}
+
+.footer__soc .icon_4 {
+  background-position: 0 -1238px;
+}
+
+.footer__soc .icon_5 {
+  background-position: 0 -1025px;
+}
+
+.footer__soc .icon_6 {
+  background-position: 0 -1067px;
+}
+
+.footer__soc .icon_7 {
+  background-position: 0 -1257px;
+}

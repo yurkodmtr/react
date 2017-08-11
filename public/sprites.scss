@@ -1,0 +1,170 @@
+@import "spr/*.png";   
+
+.header .languages:after {
+	@include spr-sprite(languages);   
+}
+.header .languages:hover:after {
+	@include spr-sprite(languages_hover);   
+}
+
+.header .search form:before {
+	@include spr-sprite(search);  
+}
+.header .search form input[type="submit"] {
+	@include spr-sprite(search_btn);  
+}
+
+.content__search input[type="submit"] {
+	@include spr-sprite(search_btn);  
+}
+.content__search:before {
+	@include spr-sprite(content__search);  
+}
+
+
+.breadcrumbs .spacer {
+	@include spr-sprite(breadcrumbs);  
+}
+
+.pagenator .prev:before {
+	@include spr-sprite(pagenator_prev);  
+}
+.pagenator .next:before {
+	@include spr-sprite(pagenator_next);    
+}
+
+.rating_pas i { 
+	@include spr-sprite(rating);    
+}
+.rating_pas i.act { 
+	@include spr-sprite(rating_act);    
+}
+
+.rating_act i { 
+	@include spr-sprite(rating_big);    
+}
+.rating_act i.act, .rating_act i.actt { 
+	@include spr-sprite(rating_big_act);    
+}
+
+.video__item a:after { 
+	@include spr-sprite(video);    
+}
+.showmore:after { 
+	@include spr-sprite(video_more);    
+}
+
+
+.gallery .jcarousel-control-prev {
+	@include spr-sprite(gallery_prev);
+}
+.gallery .jcarousel-control-next {
+	@include spr-sprite(gallery_next);
+}
+
+
+.carousel_main .jcarousel-control-prev {
+	@include spr-sprite(gal_prev);
+}
+.carousel_main .jcarousel-control-next {
+	@include spr-sprite(gal_next);
+}
+
+.btn__buy i:before {
+	@include spr-sprite(btn__buy);
+}
+
+.variants__content:before {  
+	@include spr-sprite(variants);
+}
+
+#slider {
+	@include spr-sprite(slider); 
+}
+#slider span {
+	@include spr-sprite(slider_btn); 
+}
+
+.comments .like_btn {
+	@include spr-sprite(like_btn); 
+}
+.comments .dislike_btn {
+	@include spr-sprite(dislike_btn); 
+}
+.comments .like_btn.act, .comments .like_btn:hover {
+	@include spr-sprite(like_btn_act); 
+}
+.comments .dislike_btn.act, .comments .dislike_btn:hover {
+	@include spr-sprite(dislike_btn_act); 
+}
+
+.rating_icon .icon_1 {
+	@include spr-sprite(rating_icon_1);
+}
+.rating_icon .icon_1.act {
+	@include spr-sprite(rating_icon_1_act);
+}
+.rating_icon .icon_2 {
+	@include spr-sprite(rating_icon_2);
+}
+.rating_icon .icon_2.act {
+	@include spr-sprite(rating_icon_2_act);
+}
+.rating_icon .icon_3 {
+	@include spr-sprite(rating_icon_3);
+}
+.rating_icon .icon_3.act {
+	@include spr-sprite(rating_icon_3_act);
+}
+.rating_icon .icon_4 {
+	@include spr-sprite(rating_icon_4);
+}
+.rating_icon .icon_4.act {
+	@include spr-sprite(rating_icon_4_act);
+}
+.rating_icon .icon_5 {
+	@include spr-sprite(rating_icon_5);
+}
+.rating_icon .icon_5.act {
+	@include spr-sprite(rating_icon_5_act);
+}
+
+.icon_news {
+	@include spr-sprite(icon_news);
+}
+.icon_info {
+	@include spr-sprite(icon_info);
+}
+.icon_screen {
+	@include spr-sprite(icon_screen);
+}
+.icon_games {
+	@include spr-sprite(icon_games);
+}
+.icon_date {
+	@include spr-sprite(icon_date);
+}
+
+
+.footer__soc .icon_1 {
+	@include spr-sprite(footer_soc_1);    
+}
+.footer__soc .icon_2 {
+	@include spr-sprite(footer_soc_2);    
+}
+.footer__soc .icon_3 {
+	@include spr-sprite(footer_soc_3);    
+}
+.footer__soc .icon_4 {
+	@include spr-sprite(footer_soc_4);    
+}
+.footer__soc .icon_5 {
+	@include spr-sprite(footer_soc_5);    
+}
+.footer__soc .icon_6 {
+	@include spr-sprite(footer_soc_6);    
+}
+.footer__soc .icon_7 {
+	@include spr-sprite(footer_soc_7);    
+}
+

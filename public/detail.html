@@ -1,0 +1,530 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/main.css" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+
+<!--[if lt IE 8]>
+ <div style=' clear: both; text-align:center; position: relative;'>
+ <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+ <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+ </a>
+ </div>
+ <![endif]-->
+ 
+ 
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+ 
+<script src="js/myscript.js"></script>
+ 
+
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/jcarousel.skeleton.js"></script> 
+
+<script>
+	$(window).load(function(){
+		$( "#slider" ).slider({
+		  min: 0,
+		  max: 5,
+		  step: 1,
+		  change: function( event, ui ) {
+			if (ui.value == 0) {
+				$('#slider_text').html('проголосуйте');
+			}
+			if (ui.value == 1) {
+				$('#slider_text').html('text 1');
+			}
+			if (ui.value == 2) {
+				$('#slider_text').html('text 2');
+			}
+			if (ui.value == 3) {
+				$('#slider_text').html('text 3');
+			}
+			if (ui.value == 4) {
+				$('#slider_text').html('text 4');
+			}
+			if (ui.value == 5) {
+				$('#slider_text').html('text 5');
+			}
+		  }
+		});
+	});
+</script>
+ 
+</head>
+
+<div class="wrap">
+
+	<header class="header">
+		<div class="center clearfix">		
+			<a href="#" class="logo left"><img src="images/logo.png" alt="" ></a>			
+			<div class="languages left">RU</div>			
+			<div class="search right"> <!-- add class active to show ul -->
+				<form>
+					<input type="text" placeholder="Поиск" onclick="if(this.placeholder=='Поиск'){this.placeholder='';}" onblur="if(this.placeholder==''){this.placeholder='Поиск';}"/>
+					<input type="submit" value="" />
+				</form>
+				<ul>
+					<li><a href="#">Colin McRae</a></li>
+					<li><a href="#">Colin McRae Rally</a></li>
+					<li><a href="#">Colin McRae Rally DIRT</a></li>
+					<li><a href="#">Colin McRae Rally DIRT 2</a></li>
+				</ul>
+			</div>
+			<ul class="nav left clearfix">
+				<li class="active"><a href="#">Новости</a></li>
+				<li><a href="#">Клиентские</a></li>
+				<li><a href="#">Браузерные</a></li>
+				<li><a href="#">Мини-игры</a></li>
+			</ul>
+		</div>
+	</header>
+
+	
+	
+	<section class="content">
+		<div class="detailtop">
+		
+			<div class="detailtop__bg" style="background-image:url(images/detailtop.jpg);"></div>
+			
+			<div class="center padtop clearfix">
+				<div class="center clearfix">
+					<div class="breadcrumbs">
+						<a href="#">Главная</a>
+						<span class="spacer"></span>
+						<a href="#">Клиентские игры</a>
+						<span class="spacer"></span>
+						<a href="#">RGP</a>
+					</div>
+				</div>
+				<div class="detailtop__content clearfix">
+					<div class="left clearfix">
+						<figure>
+							<img src="images/detailtop_img_1.jpg" alt="" >
+						</figure>
+						<div class="descr">
+							<div class="name">
+								Middle-earth: Shadow  of Mordor
+							</div>
+							<div class="text">
+								The game is set between The Hobbit and The Lord of the Rings, just as  Sauron begins to return to his former strength and search for the One Ring
+							</div>
+							<div class="platforms">
+								Платформы:
+								<div class="console">
+									<span>PC</span>
+									<span>PS4</span>
+									<span>XBOX</span>
+									<span>3DS</span>
+									<i>+4</i>
+								</div>
+							</div>
+							
+							<a href="#" class="btn__green btn__buy">Купить игру в <i></i></a>
+							
+							<div class="variants">
+								<article>
+									<div class="variants__open">Другие варианты</div>
+									<div class="variants__content">
+										<a href="#"><span><img src="images/variant_1.png" alt="" ></span></a>
+										<a href="#"><span><img src="images/variant_2.png" alt="" ></span></a>
+										<a href="#"><span><img src="images/variant_3.png" alt="" ></span></a>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+					<div class="right">
+						<ul class="clearfix">
+							<li>
+								<div class="name">Рейтинг:</div>
+								<div class="text_1">3.0 / 5</div>
+								<div class="text_2">700 голосов</div>
+							</li>
+							<li>
+								<div class="name">Ваша оценка:</div>
+								<div class="rating_act"> 
+									<i class="text1"></i>
+									<i class="text2"></i>
+									<i class="text3"></i>
+									<i class="text4"></i>
+									<i class="text5"></i>
+								</div>
+								<div class="text_1">выберите рейтинг</div>
+								<!-- поменять надписи можно в myscript.js -->
+							</li>
+						</ul>
+						<ul class="clearfix">
+							<li>
+								<div class="name">Сложность:</div>
+								<div class="text_1">4.50 / 5</div>
+								<div class="text_2">700 голосов</div>
+							</li>
+							<li>
+								<div class="name">Ваша оценка:</div>
+								<div class="rating_icon">
+									<span class="icon_1"></span>
+									<span class="icon_2"></span>
+									<span class="icon_3"></span>
+									<span class="icon_4"></span>
+									<span class="icon_5"></span>									
+								</div>
+								<div class="text_1">выберите рейтинг</div>
+								<!-- поменять надписи можно в myscript.js -->
+							</li>
+						</ul>
+						<ul class="clearfix">
+							<li>
+								<div class="name">Играли:</div>
+								<div class="text_1">2544</div>
+								<div class="text_2">200 голосов</div>
+							</li>
+							<li>
+								<div class="name">Ваша оценка:</div>
+								<div id="slider"></div>
+								<div id="slider_text">проголосуйте</div>
+								<!-- поменять надписи можно в начале этого хтмл -->
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>	
+
+		<div class="detailcontent">
+			<div class="center clearfix">
+				<div class="detailcontent__content">
+					<div class="nav clearfix">
+						<a href="#" class="act">Описание игры</a>
+						<a href="#">Скриншоты</a>
+						<a href="#">Трейлеры</a>
+					</div>
+					<div class="descr">
+						<div class="title">Описание</div>
+						У Middle-earth: Shadow of Mordor есть одна интересная особенность: с каждым проведенным за ней часом ты все отчетливее видишь некоторые проблемы игры, при этом не только не можешь оторваться от нее, но и начинаешь хвалить за каждый мало-мальски прилично нарисованный куст или особо уродливого орка. В какой-то момент ловишь себя на мысли, что за последние полтора-два часа так и не начал выполнять ни одно сюжетное задание, а вместо этого просто рубишь вонючих орков и пытаешься найти гаденыша, который дважды отправил тебя на тот свет, да еще и стал местным капитаном за твой счет.  Может, в этом и кроется причина неожиданного успеха игры?<br/><br/>
+						<img src="images/img_1.jpg" alt="" class="img_rounded img_100"><br/><br/>
+						Рейнджер Талион живет с семьей у Черных врат, охраняющих приличную часть Средиземья от вечно кипящего котла ненависти — Мордора. Единственная обязанность Талиона — защищать врата от орков и прочих темных сил. Увы, с этим заданием он не справился. Орки напали на пост, перебили охранников, а заодно вырезали всю семью Талиона. Он уже был готов к встрече с женой и сыном в лучшем мире, как вдруг выяснилась одна неприятная деталь: смерть <a href="#">не забирает Талиона</a> поэтому он обречен на бесконечное перерождение. В компании со странным призраком он открывает сезон охоты на убийц своей семьи и вообще на всю армию орков. На перерождениях Middle-earth: Shadow of Mordor и построена. Думаю, в будущем другие разработчики будут внимательно изучать этот ход и пытаться применить его в своих играх, так как он, безусловно, работает гениально. <br/><br/>
+						<p class="clearfix">
+							<img src="images/img_2.jpg" alt="" class="imgright">
+							Представьте: вы умираете от рук очередного мерзкого орка, но не испытываете никаких негативных эмоций. Наоборот, смерть подстегивает вас узнать об обидчике как можно больше, затем выследить его и убить на глазах у изумленных товарищей, желательно при этом унизив и заставив обратиться в бегство. Только у Талиона (окей, у меня) нет принципа «не бить лежачего».
+						</p>
+						Я помню свой первый бой с орком-капитаном (капитаны — те же орки, только мощнее обычных, они лучше вооружены и обладают рядом сильных и слабых сторон). Это был какой-то уродливый орк, кажется, с топором в руках. Я был буквально в одном-двух ударах от того, чтобы убить его, как справа появился еще один капитан, чье основное оружие — отравленные копья. Топорщика я в итоге добил, но сам выбраться из заварушки уже не смог — ядовитые копья сделали свое дело. Сразу после смерти мне показали экран армии капитанов, в которой мерзкий копейщик получил повышение за голову Талиона.<br/><br/>
+						<div class="video">
+							<iframe width="100%" height="315" src="http://www.youtube.com/embed/6l79vRDw1Jc" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="comments">
+							<div class="comments__title">250  Комментариев</div>
+							<ul>
+								<li>
+									<section>
+										<figure>
+											<img src="images/ava.jpg" alt="">
+										</figure>
+										<article>
+											<form>
+												<input type="text" placeholder="Kirill" onclick="if(this.placeholder=='Kirill'){this.placeholder='';}" onblur="if(this.placeholder==''){this.placeholder='Kirill';}" required />
+												<input type="text" placeholder="Email" onclick="if(this.placeholder=='Email'){this.placeholder='';}" onblur="if(this.placeholder==''){this.placeholder='Email';}" required />
+												<div class="clear"></div>
+												<textarea placeholder="Комментарий" rows="4" onclick="if(this.placeholder=='Комментарий'){this.placeholder='';}" onblur="if(this.placeholder==''){this.placeholder='Комментарий';}" required ></textarea>
+												<input type="submit" value="Комментировать" />
+												<div class="clear"></div>
+											</form>
+										</article>
+									</section>
+								</li>
+								<li>
+									<section>
+										<figure>
+											<img src="images/ava.jpg" alt="">
+										</figure>
+										<article>
+											<div class="top clearfix">
+												<span class="name">Дмитрий Быков</span>
+												<span class="date">2 дня назад</span>
+												<div class="like right">												
+													<a href="#" class="dislike_btn"></a>
+													<a href="#" class="like_btn"></a>
+												</div>
+												<span class="counter right color__green">+ 50</span>											
+											</div>
+											<div class="text">
+												блин хочу эту игру вот бы мне повезло в реале хоть раз ))) я победитель по жизни )) блин хочу эту игру вот бы мне повезло в реале хоть раз ))) я победитель по жизни )) блин хочу эту игру вот бы мне повезло в реале хоть раз ))) я победитель по жизни ))
+											</div>
+											<div class="bottom">
+												<a href="#">Ответить</a>
+												<a href="#">Поделиться</a>
+											</div>
+										</article>
+									</section>
+									<ul class="child">
+										<li>
+											<section>
+												<figure>
+													<img src="images/ava.jpg" alt="">
+												</figure>
+												<article>
+													<div class="top clearfix">
+														<span class="name">Дмитрий Быков</span>
+														<span class="date">2 дня назад</span>
+														<div class="like right">												
+															<a href="#" class="dislike_btn"></a>
+															<a href="#" class="like_btn"></a>
+														</div>
+														<span class="counter right color__red">- 40</span>											
+													</div>
+													<div class="text mute">
+														блин хочу эту игру вот бы мне повезло в реале хоть раз ))) я победитель по жизни )) блин хочу эту игру вот бы мне повезло в реале хоть раз ))) я победитель по жизни )) блин хочу эту игру вот бы мне повезло в реале хоть раз ))) я победитель по жизни ))
+													</div>
+													<div class="bottom">
+														<a href="#">Ответить</a>
+														<a href="#">Поделиться</a>
+													</div>
+												</article>
+											</section>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<section>
+										<figure>
+											<img src="images/ava.jpg" alt="">
+										</figure>
+										<article>
+											<div class="top clearfix">
+												<span class="name">Дмитрий Быков</span>
+												<span class="date">2 дня назад</span>
+												<div class="like right">												
+													<a href="#" class="dislike_btn"></a>
+													<a href="#" class="like_btn"></a>
+												</div>										
+											</div>
+											<div class="text">
+												блин хочу эту игру вот бы мне повезло в реале хоть раз ))) я победитель по жизни )) блин хочу эту игру вот бы мне повезло в реале хоть раз ))) я победитель по жизни )) блин хочу эту игру вот бы мне повезло в реале хоть раз ))) я победитель по жизни ))
+											</div>
+											<div class="bottom">
+												<a href="#">Ответить</a>
+												<a href="#">Поделиться</a>
+											</div>
+										</article>
+									</section>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="detailcontent__sidebar">
+					<div class="block">
+						<div class="title"><article><i class="icon_info"></i><span>Информация</span></article></div>
+						<div class="block__content info">
+							<ul>
+								<li>Название:</li>
+								<li>Middle-earth: Shadow of Mordor</li>
+							</ul>
+							<ul>
+								<li>Дата релиза:</li>
+								<li>30.09.2014</li>
+							</ul>
+							<ul>
+								<li>Платформы:</li>
+								<li>
+									<div class="console">
+										<span>PC</span>
+										<span>PS4</span>
+										<span>XBOX</span>
+										<span>XBOX ONE</span>
+									</div>
+								</li>
+							</ul>
+							<ul>
+								<li>Компания:</li>
+								<li>WB Games</li>
+							</ul>
+							<ul>
+								<li>Издатель:</li>
+								<li>Namco INC.</li>
+							</ul>
+							<ul>
+								<li>Жанр:</li>
+								<li>Фентези</li>
+							</ul>
+							<ul>
+								<li>Франшиза:</li>
+								<li>Властелин колец</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="block">
+						<div class="title"><article><i class="icon_news"></i><span>Новости  об игре</span></article></div>
+						<div class="block__content games news">
+							<ul>
+								<li><img src="images/games.jpg" alt=""></li>
+								<li>
+									<a href="#" class="games__title">Полицейские GTA V получили разрешение на полный беспредел в игре</a><br>
+									Rico Rodriguez returns to explore another autocratic island nation in this explosion-laded followup
+								</li>
+							</ul>
+							<ul>
+								<li><img src="images/games.jpg" alt=""></li>
+								<li>
+									<a href="#" class="games__title">Полицейские GTA V получили разрешение на полный беспредел в игре</a><br>
+									Rico Rodriguez returns to explore another autocratic island nation in this explosion-laded followup
+								</li>
+							</ul>
+							<a href="#" class="showmore right">Показать все новости</a>
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+					<div class="block">
+						<div class="title"><article><i class="icon_screen"></i><span>Скриншоты</span></article></div>
+						<div class="block__content">
+							<div class="screen clearfix">
+								<a href="#"><img src="images/screen.jpg" alt="" ></a>
+								<a href="#"><img src="images/screen.jpg" alt="" ></a>
+								<a href="#"><img src="images/screen.jpg" alt="" ></a>
+								<a href="#"><img src="images/screen.jpg" alt="" ></a>
+								<a href="#"><img src="images/screen.jpg" alt="" ></a>
+								<a href="#"><img src="images/screen.jpg" alt="" ></a>
+								<a href="#"><img src="images/screen.jpg" alt="" ></a>
+								<a href="#"><img src="images/screen.jpg" alt="" ></a>
+								<a href="#"><img src="images/screen.jpg" alt="" ></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="block">
+						<div class="title"><article><i class="icon_games"></i><span>Похожие игры</span></article></div>
+						<div class="block__content games">
+							<ul>
+								<li><img src="images/games.jpg" alt="" ></li>
+								<li>
+									<a href="#" class="games__title">Just Cause 2</a><br/>
+									Rico Rodriguez returns to explore another autocratic island nation in this explosion-laded followup
+								</li>
+							</ul>
+							<ul>
+								<li><img src="images/games.jpg" alt="" ></li>
+								<li>
+									<a href="#" class="games__title">Just Cause 2</a><br/>
+									Rico Rodriguez returns to explore another autocratic island nation in this explosion-laded followup
+								</li>
+							</ul>
+							<ul>
+								<li><img src="images/games.jpg" alt="" ></li>
+								<li>
+									<a href="#" class="games__title">Just Cause 2</a><br/>
+									Rico Rodriguez returns to explore another autocratic island nation in this explosion-laded followup                     
+								</li>
+							</ul>
+							<a href="#" class="showmore right">Показать еще игры</a>
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+					<div class="block">
+						<div class="title"><article><i class="icon_date"></i><span>Дата выхода</span></article></div>
+						<div class="block__content games">
+							<ul>
+								<li><img src="images/games.jpg" alt="" ></li>
+								<li>
+									<span class="date">24.12.2014</span><br/>
+									<a href="#" class="games__title marb10">Just Cause 2</a><br/>
+									<div class="console">
+										<span>PC</span>
+										<span>PS4</span>
+										<span>XBOX</span>
+										<span>3DS</span>
+									</div>
+								</li>
+							</ul>
+							<ul>
+								<li><img src="images/games.jpg" alt="" ></li>
+								<li>
+									<span class="date">24.12.2014</span><br/>
+									<a href="#" class="games__title marb10">Just Cause 2</a><br/>
+									<div class="console">
+										<span>PC</span>
+										<span>PS4</span>
+										<span>XBOX</span>
+										<span>3DS</span>
+									</div>
+								</li>
+							</ul>
+							<ul>
+								<li><img src="images/games.jpg" alt="" ></li>
+								<li>
+									<span class="date">24.12.2014</span><br/>
+									<a href="#" class="games__title marb10">Just Cause 2</a><br/>
+									<div class="console">
+										<span>PC</span>
+										<span>PS4</span>
+										<span>XBOX</span>
+										<span>3DS</span>
+									</div>
+								</li>
+							</ul>
+							<ul>
+								<li><img src="images/games.jpg" alt="" ></li>
+								<li>
+									<span class="date">24.12.2014</span><br/>
+									<a href="#" class="games__title marb10">Just Cause 2</a><br/>
+									<div class="console">
+										<span>PC</span>
+										<span>PS4</span>
+										<span>XBOX</span>
+										<span>3DS</span>
+									</div>
+								</li>
+							</ul>
+							<a href="#" class="showmore right">даты выхода  игр</a>
+							<div class="clear"></div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="center clearfix">
+			<div class="footer__copy left">
+				© 2014 Game Orbitum
+			</div>
+			<a href="#" class="footer__terms left">Пользовательское соглашение</a>
+			<div class="footer__soc right">
+				<span>Мы социальны.  Давайте дружить!</span>
+				<a href="#" class="icon_1"></a>
+				<a href="#" class="icon_2"></a>
+				<a href="#" class="icon_3"></a>
+				<a href="#" class="icon_4"></a>
+				<a href="#" class="icon_5"></a>
+				<a href="#" class="icon_6"></a>
+				<a href="#" class="icon_7"></a>
+			</div>
+		</div>
+	</footer>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
