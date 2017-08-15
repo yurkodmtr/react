@@ -3,7 +3,7 @@ import Slide from './Slide';
 
 const gameList = [
     {
-        img: 'images/item.jpg',
+        img: 'https://unsplash.it/255/170/?random',
         labelPopular: true,
         labelHit: false,
         href: '#',
@@ -16,8 +16,8 @@ const gameList = [
         consoleLineAge: '12',
         rating: '3'
     },
-    {
-        img: 'images/item.jpg',
+    { 
+        img: 'https://unsplash.it/255/170/?random',
         labelPopular: false,
         labelHit: true,
         href: '#',
@@ -31,7 +31,7 @@ const gameList = [
         rating: '2'
     },
     {
-        img: 'images/item.jpg',
+        img: 'https://unsplash.it/255/170/?random',
         labelPopular: true,
         labelHit: true,
         href: '#',
@@ -60,21 +60,22 @@ export default class IndexContent extends Component {
                             {
                                 gameList.map(function(el,index){
                                     return (
-                                        <Slide 
-                                            key={index}
-                                            img={el.img}
-                                            labelPopular={el.labelPopular}
-                                            labelHit={el.labelHit}
-                                            href={el.href}
-                                            title={el.title}
-                                            descr={el.descr}
-                                            consoleLinePc={el.consoleLinePc}
-                                            consoleLinePs4={el.consoleLinePs4}
-                                            consoleLineXbox={el.consoleLineXbox}
-                                            consoleLine3ds={el.consoleLine3ds}
-                                            consoleLineAge={el.consoleLineAge}
-                                            rating={el.rating}
-                                        />                                        
+                                        <li key={index}>
+                                            <Slide 
+                                                img={el.img}
+                                                labelPopular={el.labelPopular}
+                                                labelHit={el.labelHit}
+                                                href={el.href}
+                                                title={el.title}
+                                                descr={el.descr}
+                                                consoleLinePc={el.consoleLinePc}
+                                                consoleLinePs4={el.consoleLinePs4}
+                                                consoleLineXbox={el.consoleLineXbox}
+                                                consoleLine3ds={el.consoleLine3ds}
+                                                consoleLineAge={el.consoleLineAge}
+                                                rating={el.rating}
+                                            />  
+                                        </li>                                      
                                     )
                                 })
                             }                                                       
