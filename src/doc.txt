@@ -1,0 +1,34 @@
+npm install redux --save
+import { createStore } from 'redux';
+
+
+
+
+// ф-ция, принимает значения из dispatch - название экшна и новый стейт
+// возвращает новый экземпляр стейта, добавляя изменения, либо старый вариант стейта если изменений не произошло
+function playlist(state = [], action) {
+	if ( action.type === 'ADD_TRACK' ) {
+		return [
+			...state,
+			action.payload
+		];
+	}
+	return state;
+};
+
+// store - хранилище всех наших данных в приложении
+// Принимает playlist
+const store = createStore(playlist);
+
+// Подписываемся на изменение store. Как только поменяется стор - увидим консоль лог. Стор меняет ф-ция playlist, в которую попадает экшн из диспатча
+store.subscribe(()=>{
+	console.log('subscribe', store.getState());
+});
+
+// Диспатч - ф-ция, которая выстреливает экшн в playlist. Это единственный способ поменять значение в стор
+// Принимает на вход обьект. Едиственное обязательное поле - type, значение тайп - название события 
+// Поле payload - это то что надо поменять 
+store.dispatch({
+	type: 'ADD_TRACK',
+	payload: 'some value'
+});
