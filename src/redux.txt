@@ -1,0 +1,154 @@
+npm install redux --save
+import { createStore } from 'redux';
+
+
+// ф-ция 'Reducer', принимает значения из dispatch - название экшна и новый стейт
+// возвращает новый экземпляр стейта, добавляя изменения, либо старый вариант стейта если изменений не произошло
+
+function playlist(state = [], action) {
+	if ( action.type === 'ADD_TRACK' ) {
+		return [
+			...state,
+			action.payload
+		];
+	}
+	return state;
+};
+
+// store - хранилище всех наших данных в приложении
+// Принимает playlist
+const store = createStore(playlist);
+
+// Подписываемся на изменение store. Как только поменяется стор - увидим консоль лог. Стор меняет ф-ция playlist, в которую попадает экшн из диспатча
+store.subscribe(()=>{
+	console.log('subscribe', store.getState());
+});
+
+// Диспатч - ф-ция, которая выстреливает экшн в playlist. Это единственный способ поменять значение в стор
+// Принимает на вход обьект. Едиственное обязательное поле - type, значение тайп - название события 
+// Поле payload - это то что надо поменять 
+store.dispatch({
+	type: 'ADD_TRACK',
+	payload: 'some value'
+});
+
+--------------------------------------------------
+
+npm install react-redux --save
+import { Provider } from 'react-redux';
+
+ReactDom.render(
+	// Завернули апп в провайдер
+	// В провайдер передали наш стор
+	// Теперь весь апп будет знать о сторе
+	<Provider store={store}>
+		<App />
+	</Provider>, 
+	document.getElementById('root')
+);
+
+//внутри App
+import { connect } from 'react-redux';
+
+class App extends Component {
+
+	// функция обработчик кнопки 
+	addTrack () {
+
+		// обращаемся к дом обьекту и получаем его вэлью
+		console.log(this.trackInput.value);
+
+		// вызываем созданный ниже метод и передаем в нем значение this.trackInput.value - это значение уйдет в диспатч
+		this.props.onAddTrack(this.trackInput.value);
+	}
+
+	// при изменении тестСтор будет вызван ренден
+	// т.е. этот ретурн будет всегда с актуальными данными из глобального стора
+	render(){
+		return (
+
+			// добавляем реф, что бы вытягивать велью из инпута
+			<input type="text" ref={(input) => {this.trackInput = input}} />
+
+			// по клику вызываем функцию addTrack
+			<button onClick={this.addTrack.bind(this)}>Add track</button>
+			<ul>
+				{
+					this.props.testStore.map((elem,index) => 
+						<li key={index}>{elem}</li>
+					);
+				}
+			</ul>
+		)
+	}
+}
+
+export default connect(
+	// map state to props
+	// Мапит стейт из стора и ложит в пропс реакт компонента ( в наш App )
+	// Подписывается к стейту из стора и следит за его изменениями 
+	state => ({
+		// замапили в переменную тестСтор наш стейт из стора
+		// тестСтор теперь пропс в нашем компоненте
+		testStore: state
+	}),
+	dispatch => ({
+		// Создаем новый метод onAddTrack
+		// Этот метод будет доступен в this.props
+		// Вывзвав этот метод и передав в нашем случае trackName - мы запустим диспатч в глобальный стор и обновим стейт
+		// При обновлении стейта запустится ренден во всех подписанных компонентах
+		onAddTrack: (trackName) => {
+			dispatch({
+				type: 'ADD_TRACK',
+				payload: trackName
+			})
+		}
+	})
+)(App);
+
+--------------------------------------------------
+
+// Если стейт не просто массив а обькет, то в редюсере надо по другому возвращать новый стейт
+let stateWithDefaultValue = {
+	tracks: [
+		'first track name',
+		'second track name'
+	],
+	playlist: [
+		'first playlist name',
+		'second playlist name'
+	]
+}
+
+// передаем в стейт cам обьект
+function playlist(state = stateWithDefaultValue, action) {
+	if ( action.type === 'ADD_TRACK' ) {
+		return [
+			...state,
+			// в трекс ложим старые треки + новые из action.payload
+			tracks: [...state.tracks, action.payload]
+		];
+	}
+	return state;
+};
+
+// теперь как правильно передать стор в компонент App
+export default connect(
+	state => ({
+		/*
+			было testStore: state
+		*/
+		// замапили в переменную tracks наш state.tracks из стора
+		// tracks теперь пропс в нашем компоненте
+		// в рендере теперь вызываем не testStore а tracks
+		tracks: state.tracks
+	}),
+	dispatch => ({
+		onAddTrack: (trackName) => {
+			dispatch({
+				type: 'ADD_TRACK',
+				payload: trackName
+			})
+		}
+	})
+)(App);
