@@ -125,6 +125,7 @@ function playlist(state = stateWithDefaultValue, action) {
 	if ( action.type === 'ADD_TRACK' ) {
 		return [
 			...state,
+			// обращаемся не к массиву, а к ключу tracks обьекта stateWithDefaultValue
 			// в трекс ложим старые треки + новые из action.payload
 			tracks: [...state.tracks, action.payload]
 		];
@@ -134,14 +135,16 @@ function playlist(state = stateWithDefaultValue, action) {
 
 // теперь как правильно передать стор в компонент App
 export default connect(
-	state => ({
-		/*
-			было testStore: state
-		*/
+	state => ({		
+		// было testStore: state
+		// сейчас state - это обьект, надо обратиться к нужному ключу обьекта, в нашем случае это state.tracks
 		// замапили в переменную tracks наш state.tracks из стора
 		// tracks теперь пропс в нашем компоненте
 		// в рендере теперь вызываем не testStore а tracks
 		tracks: state.tracks
+
+		// tracks может принимать что угодно, например функцию которая возвращает данные
+		tracks: state.tracks.filter(...);
 	}),
 	dispatch => ({
 		onAddTrack: (trackName) => {
@@ -150,5 +153,93 @@ export default connect(
 				payload: trackName
 			})
 		}
+		// диспатчей может быть сколько угодно, например
+		,
+		onDeleteTrack: (trackName) => {
+			dispatch({
+				type: 'DELETE_TRACK',
+				payload: trackName
+			})
+		}
 	})
 )(App);
+
+--------------------------------------------------
+
+// в редюсере может быть большое кол-во экшнов
+function playlist(state = [], action) {
+	if ( action.type === 'ADD_TRACK' ) {
+		
+	} else if ( action.type === 'DELETE_TRACK' ) {
+		
+	} else if ( action.type === 'ADD_PLAYLIST' ) {
+		
+	} else if ( action.type === 'DELETE_PLAYLIST' ) {
+		
+	}
+	return state;
+};
+
+// для работы с редюсерами создадим дерикторию reducers в проекте, где будут лежать все редюсеры
+/*
+
+----reducers
+--------index.js
+--------tracks.js
+--------playlists.js
+
+*/
+
+// index.js
+import { combineReducers } from 'redux';
+import tracks from './tracks';
+import playlists from './playlists';
+
+export default combineReducers({
+	// перечисляем все редюсеры которые мы подключили, и которые в итоге надо скомбинировать
+	tracks,
+	playlists
+});
+
+// tracks.js
+// tracksArray - массив который содержит только треки
+export default function tracks(state = tracksArray, action) {
+	if ( action.type === 'ADD_TRACK' ) {
+		return [
+			...state,
+			action.payload
+		];
+	} else if ( action.type === 'DELETE_TRACK' ) {
+		return [
+			...state,
+			action.payload
+		];
+	}
+	return state;
+};
+
+// playlists.js
+// playlistsArray - массив который содержит только треки
+export default function playlists(state = playlistsArray, action) {
+	if ( action.type === 'ADD_PLAYLIST' ) {
+		...
+	} else if ( action.type === 'DELETE_PLAYLIST' ) {
+		...
+	}
+	return state;
+};
+
+// Теперь там где мы создавали стор и передавали в него имя редюсера - передадим не один редюсер, а все редюсеры 
+
+// было 
+const store = createStore(playlist);
+
+// стало
+// зайдет в папку ./reducers, найдет index.js
+import reducer from './reducers';
+const store = createStore(reducer);
+
+// по такому принципу можно разбивать любой вложенные редюсер, например редюсер tracks можно разбить на части и заимпортить эти части в него
+
+--------------------------------------------------
+
