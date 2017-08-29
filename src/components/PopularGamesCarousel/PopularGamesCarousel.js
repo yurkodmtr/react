@@ -1,52 +1,40 @@
 import React, { Component } from 'react';
 import Slide from './Slide';
 
-const gameList = [
-    {
-        img: 'https://unsplash.it/255/170/?random',
-        labelPopular: true,
-        labelHit: false,
-        href: '#',
-        title: 'Halo: The Master Chief Collection',
-        descr: 'Bumbling space hero Rex Nebular must prevent an army of war-minded females from conquering the galaxy and bjugating males everywhere into slaves to do their bidding.',
-        consoleLinePc: false,
-        consoleLinePs4: true,
-        consoleLineXbox: true,
-        consoleLine3ds: true,
-        consoleLineAge: '12',
-        rating: '3'
-    },
-    { 
-        img: 'https://unsplash.it/255/170/?random',
-        labelPopular: false,
-        labelHit: true,
-        href: '#',
-        title: 'Halo: The Master ',
-        descr: 'Bumbling space hero Rex Nebular.',
-        consoleLinePc: true,
-        consoleLinePs4: false,
-        consoleLineXbox: true,
-        consoleLine3ds: false,
-        consoleLineAge: '14',
-        rating: '2'
-    },
-    {
-        img: 'https://unsplash.it/255/170/?random',
-        labelPopular: true,
-        labelHit: true,
-        href: '#',
-        title: 'Halo: The Master Chief Collection',
-        descr: 'Bumbling space hero Rex Nebular must prevent an army of war-minded females from conquering the galaxy and bjugating males everywhere into slaves to do their bidding.',
-        consoleLinePc: false,
-        consoleLinePs4: true,
-        consoleLineXbox: true,
-        consoleLine3ds: false,
-        consoleLineAge: '8',
-        rating: '4'
-    },
-];
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 
 export default class IndexContent extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataFromJson: []
+        }
+    }
+
+    componentWillMount() {         
+
+        fetch('/json/indexPagePopularGamesCarousel.json', {
+          heders : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+           }
+        })
+        .then((response) => {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            return response.json();
+        })
+        .then((stories) => {
+            this.setState({
+                dataFromJson: stories
+            });
+        });
+
+    }
+
     render() {
         return ( 
             <div className="center"> 
@@ -58,7 +46,7 @@ export default class IndexContent extends Component {
                     <div className="jcarousel">
                         <ul>
                             {
-                                gameList.map(function(el,index){
+                                this.state.dataFromJson.map(function(el,index){
                                     return (
                                         <li key={index}>
                                             <Slide 
